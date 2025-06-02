@@ -13,10 +13,25 @@ const Home = () => {
       imageSrc: "/Imagenes/fnafMovie.jpg",
     },
     {
-      title: "Steven Universe",
-      altText: "Steven Universe",
-      imageSrc: "/Imagenes/steven.png",
+      title: "Un Show Más",
+      altText: "Un Show Más",
+      imageSrc: "/Imagenes/regularShow.jpg",
     },
+    {
+      title: "Oppenheimer",
+      altText: "Oppenheimer",
+      imageSrc: "/Imagenes/oppenheimer.webp",
+    },
+    {
+      title: "The Office",
+      altText: "The Office",
+      imageSrc: "/Imagenes/theoffice.png",
+    },
+    {
+      title: "Venom: El Ultimo Baile",
+      altText: "Venom: El Ultimo Baile",
+      imageSrc: "/Imagenes/venom.webp",
+    }
   ];
 
   return (

@@ -1,31 +1,63 @@
 import React, { useState } from 'react';
-import BannerDestacado from './BannerDestacado';
 import { Box, IconButton, MobileStepper } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
+import BannerDestacado from './BannerDestacado';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const CarruselDestacado = ({ banners, dotsOffset = { left: '50%', transform: 'translateX(-50%)' } }) => {
+const CarruselDestacado = ({
+  banners,
+  dotsOffset = { left: '50%', transform: 'translateX(-50%)' }
+}) => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
   const maxSteps = banners.length;
 
   const handleNext = () => {
-    setActiveStep((prevStep) => (prevStep + 1) % maxSteps);
+    setActiveStep((prev) => (prev + 1) % maxSteps);
   };
 
   const handleBack = () => {
-    setActiveStep((prevStep) => (prevStep - 1 + maxSteps) % maxSteps);
+    setActiveStep((prev) => (prev - 1 + maxSteps) % maxSteps);
+  };
+
+  const fadeVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.4 } },
+    exit: { opacity: 0, transition: { duration: 0.4 } }
   };
 
   return (
-    <Box sx={{ width: '100%', position: 'relative' }}>
-      <BannerDestacado
-        title={banners[activeStep].title}
-        altText={banners[activeStep].altText}
-        imageSrc={banners[activeStep].imageSrc}
-      />
+    <Box
+      sx={{
+        width: '100%',
+        position: 'relative',
+        overflow: 'hidden',
+        minHeight: '300px', // Asegura altura mínima
+        backgroundColor: '#000', // Fondo mientras carga
+      }}
+    >
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeStep}
+          variants={fadeVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          style={{
+            position: 'relative', // ← cambio clave: no usar absolute aquí
+            width: '100%',
+          }}
+        >
+          <BannerDestacado
+            title={banners[activeStep].title}
+            altText={banners[activeStep].altText}
+            imageSrc={banners[activeStep].imageSrc}
+          />
+        </motion.div>
+      </AnimatePresence>
 
-      {/* Botón izquierda */}
+      {/* Flechas */}
       <IconButton
         onClick={handleBack}
         sx={{
@@ -35,13 +67,12 @@ const CarruselDestacado = ({ banners, dotsOffset = { left: '50%', transform: 'tr
           transform: 'translateY(-50%)',
           backgroundColor: 'rgba(0,0,0,0.5)',
           color: 'white',
+          zIndex: 2,
           '&:hover': { backgroundColor: 'rgba(0,0,0,0.7)' }
         }}
       >
         <KeyboardArrowLeft />
       </IconButton>
-
-      {/* Botón derecha */}
       <IconButton
         onClick={handleNext}
         sx={{
@@ -51,19 +82,21 @@ const CarruselDestacado = ({ banners, dotsOffset = { left: '50%', transform: 'tr
           transform: 'translateY(-50%)',
           backgroundColor: 'rgba(0,0,0,0.5)',
           color: 'white',
+          zIndex: 2,
           '&:hover': { backgroundColor: 'rgba(0,0,0,0.7)' }
         }}
       >
         <KeyboardArrowRight />
       </IconButton>
 
-      {/* Dots con posición por píxeles */}
+      {/* Dots */}
       <Box
         sx={{
           position: 'absolute',
-          bottom: '10px',
+          bottom: '100px',
           display: 'flex',
-          ...dotsOffset
+          ...dotsOffset,
+          zIndex: 2,
         }}
       >
         <MobileStepper
@@ -76,11 +109,13 @@ const CarruselDestacado = ({ banners, dotsOffset = { left: '50%', transform: 'tr
           sx={{
             backgroundColor: 'transparent',
             '.MuiMobileStepper-dot': {
-              backgroundColor: 'gray'
+              backgroundColor: 'gray',
+              width: '10px',
+              height: '10px',
             },
             '.MuiMobileStepper-dotActive': {
-              backgroundColor: 'white'
-            }
+              backgroundColor: 'white',
+            },
           }}
         />
       </Box>
