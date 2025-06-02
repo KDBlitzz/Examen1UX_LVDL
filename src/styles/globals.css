@@ -149,3 +149,253 @@ body {
 .hamburger-icon {
   color: white;
 }
+
+
+
+.topten-section {
+  padding: 1rem;
+  background-color: black;
+  color: white;
+}
+
+.topten-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.topten-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.topten-item {
+  position: relative;
+  width: 160px;
+  flex-shrink: 0;
+}
+
+.topten-rank {
+  position: absolute;
+  left: -10px;
+  bottom: -5px;
+  font-size: 6rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.05);
+  z-index: 0;
+  line-height: 1;
+}
+
+/* Card, Thumbnail y Dots */
+.card {
+  aspect-ratio: 2 / 3;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.card-hover {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border 0.3s;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.card:hover .card-hover {
+  border-color: white;
+}
+
+.thumbnail {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+  display: block;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.dots {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 3;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.dots:hover .dot {
+  background-color: white;
+}
+
+.ranking-number {
+  position: absolute;
+  left: -10px;
+  bottom: -5px;
+  font-size: 6rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.05);
+  z-index: 0;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* Responsivo: ajusta tamaño del número en pantallas pequeñas */
+@media (max-width: 768px) {
+  .ranking-number {
+    font-size: 3.5rem;
+    left: -5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ranking-number {
+    font-size: 2.5rem;
+    left: -2px;
+  }
+}
+
+body {
+  background: #000;
+}
+
+.watch-item {
+  flex: 1 0 calc(25% - 1rem); /* 4 por fila, con margen */
+  max-width: calc(25% - 1rem);
+  min-width: 200px; /* o menos si lo deseas */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+.watch-thumbnail {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.watch-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.watch-hover {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  transition: border 0.3s;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.watch-thumbnail:hover .watch-hover {
+  border-color: white;
+}
+
+/* ▶ Play icon */
+.play-icon {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s;
+  z-index: 3;
+}
+
+.watch-thumbnail:hover .play-icon {
+  color: white;
+}
+
+/* ⋮ Dots */
+.dots {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 3;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+.dots:hover .dot {
+  background-color: white;
+}
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+/* Title + Age */
+.watch-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.watch-info .title {
+  transition: color 0.3s;
+}
+
+.watch-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  gap: 2px;
+}
+
+
+.watch-item:hover .title {
+  color: white;
+}
+
+.watch-item:hover .age {
+  opacity: 1;
+}
