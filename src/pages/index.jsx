@@ -1,21 +1,42 @@
-import BannerDestacado from "../components/organisms/BannerDestacado";
-
-
+import CarruselDestacado from '../components/organisms/CarruselDestacado';
 
 const Home = () => {
-  const contenidoDestacado = {
-    title: "El Increible Mundo de Gumball",
-  };
+  const banners = [
+    {
+      title: "El Increíble Mundo de Gumball",
+      altText: "Gumball",
+      imageSrc: "/Imagenes/gumball.png",
+    },
+    {
+      title: "Five Nights at Freddy's",
+      altText: "Five Nights at Freddy's",
+      imageSrc: "/Imagenes/fnafMovie.jpg",
+    },
+    {
+      title: "Un Show Más",
+      altText: "Un Show Más",
+      imageSrc: "/Imagenes/regularShow.jpg",
+    },
+    {
+      title: "Oppenheimer",
+      altText: "Oppenheimer",
+      imageSrc: "/Imagenes/oppenheimer.webp",
+    },
+    {
+      title: "The Office",
+      altText: "The Office",
+      imageSrc: "/Imagenes/theoffice.png",
+    },
+    {
+      title: "Venom: El Ultimo Baile",
+      altText: "Venom: El Ultimo Baile",
+      imageSrc: "/Imagenes/venom.webp",
+    }
+  ];
 
   return (
     <main>
-      <BannerDestacado 
-        title={contenidoDestacado.title}
-        altText="El Increible Mundo de Gumball"
-        width={1200}
-        height={500}
-      />
-      {}
+      <CarruselDestacado banners={banners} />
     </main>
   );
 };
