@@ -1,4 +1,6 @@
+import React from 'react';
 import CarruselDestacado from '../components/organisms/CarruselDestacado';
+import NavBar from '../components/organisms/NavBar'; // Asegúrate de tener la ruta correcta
 
 const Home = () => {
   const banners = [
@@ -35,9 +37,12 @@ const Home = () => {
   ];
 
   return (
-    <main>
-      <CarruselDestacado banners={banners} />
-    </main>
+    <>
+      <NavBar />
+      <main style={{ paddingTop: '64px' }}>
+        <CarruselDestacado banners={banners} />
+      </main>
+    </>
   );
 };
 

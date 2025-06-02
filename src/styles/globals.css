@@ -90,3 +90,62 @@ body {
   background: #000;
 }
 
+
+/* Logo visible */
+.nav-logo-img {
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Aseguramos fondo negro en Drawer y texto blanco */
+.MuiDrawer-paper {
+  background-color: #000 !important;
+  color: white !important;
+}
+
+/* Navbar general */
+.nav-bar {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(5px);
+  box-shadow: none;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.nav-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-button {
+  color: white !important;
+  text-transform: none;
+  font-size: 1rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: transparent;
+  font-weight: bold !important;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.nav-button:hover {
+  color: #ccc;
+  border-bottom: 2px solid white;
+}
+
+.hamburger-icon {
+  color: white;
+}
