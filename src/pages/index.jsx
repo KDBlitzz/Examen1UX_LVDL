@@ -7,34 +7,34 @@ import ContinueWatchingCarousel from '../components/organisms/ContinueWatchingCa
 
 const itemsContinuarViendo = [
   {
-    src: '/assets/images/1.jpg',
-    title: 'El Frío en los Huesos1',
-    age: '16+',
+    src: '/Imagenes/gumballcv.webp',
+    title: 'El Increíble Mundo de Gumball',
+    age: '7+',
     progress: 70,
   },
   {
-    src: '/assets/images/2.jpg',
-    title: 'El Código Enigma2',
-    age: '13+',
-    progress: 40,
+    src: '/Imagenes/regularshowcv.webp',
+    title: 'Un Show Más',
+    age: '10+',
+    progress: 60,
   },
   {
-    src: '/assets/images/2.jpg',
-    title: 'El Código Enigma3',
-    age: '13+',
-    progress: 40,
+    src: '/Imagenes/robotsalvajecv.webp',
+    title: 'Robot Salvaje',
+    age: '7+',
+    progress: 30,
   },
   {
-    src: '/assets/images/2.jpg',
-    title: 'El Código Enigma4',
-    age: '13+',
-    progress: 40,
+    src: '/Imagenes/ricknmortycv.webp',
+    title: 'Rick and Morty',
+    age: '16+',
+    progress: 90,
   },
   {
-    src: '/assets/images/2.jpg',
-    title: 'El Código Enigma5',
+    src: '/Imagenes/luisenriquecv.webp',
+    title: 'No Tenéis Ni **** Idea',
     age: '13+',
-    progress: 40,
+    progress: 75,
   },
 ];
 
