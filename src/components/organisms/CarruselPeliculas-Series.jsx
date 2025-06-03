@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, IconButton, useMediaQuery, useTheme } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Card from '../molecules/Tarjeta';
-import { useEffect } from 'react';
 
 const CarouselPeliculas = ({ items, showRank = false }) => {
   const [startIndex, setStartIndex] = useState(0);
@@ -16,38 +15,29 @@ const CarouselPeliculas = ({ items, showRank = false }) => {
   if (isXs) visibleCount = 2;
   else if (isSm) visibleCount = 3;
   else if (isMd) visibleCount = 4;
+
+  const scrollStep = visibleCount - 1; // Avanza dejando uno repetido
+
+  // Limitar a los 10 primeros elementos
+  const topItems = items.slice(0, 10);
+
   useEffect(() => {
     setStartIndex(0);
   }, [visibleCount]);
 
-const getVisibleItems = () => {
-  const total = items.length;
-  const end = startIndex + visibleCount;
-
-  if (end <= total) {
-    // Caso normal: hay suficientes elementos
-    return items.slice(startIndex, end);
-  }
-
-  // Caso final: no hay suficientes elementos desde startIndex
-  const slice = items.slice(startIndex, total);
-  const faltan = visibleCount - slice.length;
-
-  // Tomar del final sin exceder total ni repetir
-  const complement = items.slice(Math.max(0, total - visibleCount), total - slice.length);
-  return [...complement, ...slice];
-};
+  const getVisibleItems = () => {
+    return topItems.slice(startIndex, startIndex + visibleCount);
+  };
 
   const handleNext = () => {
-    const siguiente = startIndex + visibleCount;
-    if (siguiente < items.length) {
-      setStartIndex(siguiente);
-    }
+    const maxStart = topItems.length - visibleCount;
+    const nextIndex = Math.min(startIndex + scrollStep, maxStart);
+    setStartIndex(nextIndex);
   };
 
   const handlePrev = () => {
-    const anterior = startIndex - visibleCount;
-    setStartIndex(anterior >= 0 ? anterior : 0);
+    const prevIndex = Math.max(startIndex - scrollStep, 0);
+    setStartIndex(prevIndex);
   };
 
   const visibleItems = getVisibleItems();
@@ -68,26 +58,20 @@ const getVisibleItems = () => {
         }}
       >
         {visibleItems.map((item, index) => (
-          <Box
-          key={index}
-          sx={{
-            flex: 1,
-            minWidth: 0,
-          }}
-          >
+          <Box key={index} sx={{ flex: 1, minWidth: 0 }}>
             <Card
-            src={item.src}
-            alt={item.alt}
-            rank={startIndex + index + 1} 
-            showRank={showRank}
+              src={item.src}
+              alt={item.alt}
+              rank={startIndex + index + 1}
+              showRank={showRank}
             />
-            </Box>
-          ))}
+          </Box>
+        ))}
       </Box>
 
       <IconButton
         onClick={handleNext}
-        disabled={startIndex + visibleCount >= items.length}
+        disabled={startIndex + visibleCount >= topItems.length}
         sx={{ color: 'white' }}
       >
         <ArrowForwardIosIcon />
@@ -97,6 +81,3 @@ const getVisibleItems = () => {
 };
 
 export default CarouselPeliculas;
-
-
-

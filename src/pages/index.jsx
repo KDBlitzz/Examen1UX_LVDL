@@ -39,12 +39,12 @@ const itemsContinuarViendo = [
 ];
 
 const itemsDestacado = [
-  { src: '/Imagenes/ricknmorty.webp', alt: 'Serie' },
+  { src: '/Imagenes/ricknmortyce.png', alt: 'Serie' },
   { src: '/Imagenes/terrorrio.webp', alt: 'Película' },
   { src: '/Imagenes/thelastofus.webp', alt: 'Serie' },
   { src: '/Imagenes/yargi.webp', alt: 'Serie' },
-  { src: '/Imagenes/ajlt.webp', alt: 'Serie' },
-  { src: '/Imagenes/elchicodeoro.webp', alt: 'Serie' },
+  { src: '/Imagenes/ajltce.png', alt: 'Serie' },
+  { src: '/Imagenes/elchicodeoroce.png', alt: 'Serie' },
   { src: '/Imagenes/mountainhead.webp', alt: 'Película' },
   { src: '/Imagenes/duster.webp', alt: 'Serie' },
   { src: '/Imagenes/mickey17.webp', alt: 'Película' },
@@ -80,7 +80,7 @@ const Home = () => {
       title: "El Increíble Mundo de Gumball",
       altText: "Gumball",
       imageSrc: "/Imagenes/gumball.png",
-      description: 'El Responsable Gumball y Darwin cuidan de Anais "responsablemente" mientras "muy irresponsablemente" inundan la casa.',
+      description: 'Conoce a los Watterson: Mamá, Papá, Anaís, Darwin y Gumball. Gumball es un gato de doce años con dotes para la "desgracia" y un grupo de raros amigos.',
     },
     {
       title: "Five Nights at Freddy's",
@@ -92,7 +92,7 @@ const Home = () => {
       title: "Un Show Más",
       altText: "Un Show Más",
       imageSrc: "/Imagenes/regularShow.jpg",
-      description: "El Poder Rigby roba un teclado mágico a un atareado hechicero. Cuando Mordecai y Rigby accidentalmente hacen un agujero en la pared cuando luchaban contra un animal de peluche, usan el teclado para que Papaleta y Benson les den un aumento para pagar el arreglo.",
+      description: "Los encargados de un parque y mejores amigos, Mordecai y Rigby, se pasan el día intentando entretenerse con lo que sea.",
     },
     {
       title: "Oppenheimer",

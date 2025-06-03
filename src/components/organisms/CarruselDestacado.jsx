@@ -33,8 +33,8 @@ const CarruselDestacado = ({
         width: '100%',
         position: 'relative',
         overflow: 'hidden',
-        minHeight: '300px', // Asegura altura mínima
-        backgroundColor: '#000', // Fondo mientras carga
+        minHeight: '300px',
+        backgroundColor: '#000', 
       }}
     >
       <AnimatePresence mode="wait">
@@ -45,19 +45,19 @@ const CarruselDestacado = ({
           animate="animate"
           exit="exit"
           style={{
-            position: 'relative', // ← cambio clave: no usar absolute aquí
+            position: 'relative',
             width: '100%',
           }}
         >
           <BannerDestacado
             title={banners[activeStep].title}
+            desc={banners[activeStep].description}
             altText={banners[activeStep].altText}
             imageSrc={banners[activeStep].imageSrc}
           />
         </motion.div>
       </AnimatePresence>
 
-      {/* Flechas */}
       <IconButton
         onClick={handleBack}
         sx={{
@@ -89,7 +89,6 @@ const CarruselDestacado = ({
         <KeyboardArrowRight />
       </IconButton>
 
-      {/* Dots */}
       <Box
         sx={{
           position: 'absolute',

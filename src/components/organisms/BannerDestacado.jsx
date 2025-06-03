@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Image from '../atoms/Image';
 import BannerContent from '../molecules/BannerContent';
 
-const BannerDestacado = ({ title, altText, imageSrc, width = 1200, height = 500 }) => {
+const BannerDestacado = ({ title, desc, altText, imageSrc, width = 1200, height = 500 }) => {
   const fadeVariants = {
     initial: { opacity: 0 },
     animate: { opacity: 1, transition: { duration: 0.6 } },
@@ -24,7 +24,11 @@ const BannerDestacado = ({ title, altText, imageSrc, width = 1200, height = 500 
         exit="exit"
         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
       >
-        <BannerContent title={title} buttonLabel="Reproducir" />
+        <BannerContent
+          title={title}
+          desc={desc}
+          buttonLabel="Reproducir"
+        />
       </motion.div>
     </div>
   );
