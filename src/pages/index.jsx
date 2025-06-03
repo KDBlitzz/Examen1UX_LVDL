@@ -80,31 +80,37 @@ const Home = () => {
       title: "El Increíble Mundo de Gumball",
       altText: "Gumball",
       imageSrc: "/Imagenes/gumball.png",
+      description: 'El Responsable Gumball y Darwin cuidan de Anais "responsablemente" mientras "muy irresponsablemente" inundan la casa.',
     },
     {
       title: "Five Nights at Freddy's",
       altText: "Five Nights at Freddy's",
       imageSrc: "/Imagenes/fnafMovie.jpg",
+      description: "Josh Hutcherson estelariza esta adaptación del videojuego que sigue al vigilante de una pizzería con muñecos animatrónicos asesinos.",
     },
     {
       title: "Un Show Más",
       altText: "Un Show Más",
       imageSrc: "/Imagenes/regularShow.jpg",
+      description: "El Poder Rigby roba un teclado mágico a un atareado hechicero. Cuando Mordecai y Rigby accidentalmente hacen un agujero en la pared cuando luchaban contra un animal de peluche, usan el teclado para que Papaleta y Benson les den un aumento para pagar el arreglo.",
     },
     {
       title: "Oppenheimer",
       altText: "Oppenheimer",
       imageSrc: "/Imagenes/oppenheimer.webp",
+      description: "Christopher Nolan dirige a Cillian Murphy en este aclamado drama biográfico sobre el físico J. Robert Oppenheimer, el padre de la bomba atómica.",
     },
     {
       title: "The Office",
       altText: "The Office",
       imageSrc: "/Imagenes/theoffice.png",
+      description: "Michael Scott, gerente regional de Dunder Mifflin, lidera al equipo en un hilarante viaje a través de la mala gestión y la conducta inapropiada.",
     },
     {
       title: "Venom: El Ultimo Baile",
       altText: "Venom: El Ultimo Baile",
       imageSrc: "/Imagenes/venom.webp",
+      description: "¡Que comience el caos... una última vez! Tom Hardy regresa como Eddie Brock en la última entrega de la emocionante trilogía de Venom.",
     }
   ];
 

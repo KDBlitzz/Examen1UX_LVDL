@@ -3,7 +3,6 @@ import Thumbnail from '../atoms/Miniatura';
 const Card = ({ src, alt, rank, showRank = false }) => {
   return (
     <div className="card">
-      {/* Ranking grande solo si showRank está activado */}
       {showRank && rank !== undefined && (
         <div className="ranking-number">{rank}</div>
       )}
