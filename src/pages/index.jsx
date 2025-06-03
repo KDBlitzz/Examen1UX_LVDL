@@ -39,16 +39,16 @@ const itemsContinuarViendo = [
 ];
 
 const itemsDestacado = [
-  { src: '/assets/images/1.jpg', alt: 'Película 1' },
-  { src: '/assets/images/2.jpg', alt: 'Película 2' },
-  { src: '/assets/images/3.jpg', alt: 'Película 3' },
-  { src: '/assets/images/4.jpg', alt: 'Película 4' },
-  { src: '/assets/images/5.jpg', alt: 'Película 5' },
-  { src: '/assets/images/6.jpg', alt: 'Película 6' },
-  { src: '/assets/images/7.jpg', alt: 'Película 7' },
-  { src: '/assets/images/8.jpg', alt: 'Película 8' },
-  { src: '/assets/images/9.jpg', alt: 'Película 9' },
-  { src: '/assets/images/10.jpg', alt: 'Película 10' },
+  { src: '/Imagenes/ricknmorty.webp', alt: 'Serie' },
+  { src: '/Imagenes/terrorrio.webp', alt: 'Película' },
+  { src: '/Imagenes/thelastofus.webp', alt: 'Serie' },
+  { src: '/Imagenes/yargi.webp', alt: 'Serie' },
+  { src: '/Imagenes/ajlt.webp', alt: 'Serie' },
+  { src: '/Imagenes/elchicodeoro.webp', alt: 'Serie' },
+  { src: '/Imagenes/mountainhead.webp', alt: 'Película' },
+  { src: '/Imagenes/duster.webp', alt: 'Serie' },
+  { src: '/Imagenes/mickey17.webp', alt: 'Película' },
+  { src: '/Imagenes/reyes.webp', alt: 'Serie' },
 ];
 const itemsParati = [
   { src: '/assets/images/1.jpg', alt: 'Película 1' },
@@ -111,25 +111,25 @@ const Home = () => {
   return (
     <>
       <NavBar />
-      <main style={{ paddingTop: '64px' }}>
+      <main style={{ paddingTop: '64px', fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>
         <CarruselDestacado banners={banners} />
       </main>
-      <div style={{ backgroundColor: 'black', padding: '1rem 1rem 0 1rem' }}>
-            <h2 style={{ color: 'white', marginBottom: '0.5rem' }}>Destacado</h2>
-            <CarouselPeliculas items={itemsDestacado}/>
-          </div>
-          <div style={{ backgroundColor: 'black', padding: '1rem' }}>
-            <h2 style={{ color: 'white', marginBottom: '0.5rem' }}>Para ti</h2>
-            <CarouselPeliculas items={itemsParati}/>
-          </div>
-          <div style={{ backgroundColor: 'black', padding: '1rem' }}>
-            <h2 style={{ color: 'white', marginBottom: '0.5rem' }}>TOP 10 Series</h2>
-            <CarouselPeliculas items={itemsTop10} showRank />
-          </div>
-          <div style={{ backgroundColor: 'black', padding: '1rem' }}>
-            <h2 style={{ color: 'white', marginBottom: '0.5rem' }}>Continuar viendo</h2>
-            <ContinueWatchingCarousel items={itemsContinuarViendo} />
-          </div>
+      <div style={{ backgroundColor: 'black', padding: '1rem 1rem 0 1rem', fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>
+        <h2 style={{ color: 'white', marginBottom: '0.5rem', fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>Destacado</h2>
+        <CarouselPeliculas items={itemsDestacado}/>
+      </div>
+      <div style={{ backgroundColor: 'black', padding: '1rem', fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>
+        <h2 style={{ color: 'white', marginBottom: '0.5rem', fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>Para ti</h2>
+        <CarouselPeliculas items={itemsParati}/>
+      </div>
+      <div style={{ backgroundColor: 'black', padding: '1rem', fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>
+        <h2 style={{ color: 'white', marginBottom: '0.5rem', fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>TOP 10 Series</h2>
+        <CarouselPeliculas items={itemsTop10} showRank />
+      </div>
+      <div style={{ backgroundColor: 'black', padding: '1rem', fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>
+        <h2 style={{ color: 'white', marginBottom: '0.5rem', fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>Continuar viendo</h2>
+        <ContinueWatchingCarousel items={itemsContinuarViendo} />
+      </div>
     </>
   );
 };

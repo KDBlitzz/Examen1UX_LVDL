@@ -159,6 +159,7 @@ body {
 }
 
 .topten-title {
+  font-family: 'Helvetica Neue', Arial, sans-serif; 
   font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: bold;
@@ -178,6 +179,7 @@ body {
 }
 
 .topten-rank {
+  font-family: 'Helvetica Neue', Arial, sans-serif; 
   position: absolute;
   left: -10px;
   bottom: -5px;
@@ -247,6 +249,7 @@ body {
 }
 
 .ranking-number {
+  font-family: 'Helvetica Neue', Arial, sans-serif; 
   position: absolute;
   left: -10px;
   bottom: -5px;
@@ -320,6 +323,7 @@ body {
 
 /* ▶ Play icon */
 .play-icon {
+  font-family: 'Helvetica Neue', Arial, sans-serif; 
   position: absolute;
   bottom: 8px;
   left: 8px;
